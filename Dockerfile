@@ -27,9 +27,8 @@ COPY . .
 # Uncomment the following line in case you want to disable telemetry during the build.
 ENV NEXT_TELEMETRY_DISABLED 1
 
-# ENV NEXT_PUBLIC_BASE_URL ${NEXT_PUBLIC_BASE_URL}
-# ENV NEXT_PUBLIC_ML_FILE_UPLOAD ${NEXT_PUBLIC_ML_FILE_UPLOAD}
-ENV NEXT_PUBLIC_BASE_URL="replace-this-later"
+ARG NEXT_PUBLIC_BASE_URL='static-value-from-dockerfile'
+ENV NEXT_PUBLIC_BASE_URL ${NEXT_PUBLIC_BASE_URL}
 
 
 RUN \
@@ -45,7 +44,8 @@ WORKDIR /app
 
 ENV NODE_ENV production
 
-ENV NEXT_PUBLIC_BASE_URL="replace-this-later"
+ARG NEXT_PUBLIC_BASE_URL='static-value-from-dockerfile'
+ENV NEXT_PUBLIC_BASE_URL ${NEXT_PUBLIC_BASE_URL}
 
 # Uncomment the following line in case you want to disable telemetry during runtime.
 ENV NEXT_TELEMETRY_DISABLED 1

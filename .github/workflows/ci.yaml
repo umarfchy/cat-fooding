@@ -38,8 +38,7 @@ jobs:
           tags: ghcr.io/${{ github.repository }}:${{ steps.vars.outputs.COMMIT_TAG }}
           build-args: |
             NEXT_PUBLIC_BASE_URL=${{env.NEXT_PUBLIC_BASE_URL}}
-            NEXT_PUBLIC_ML_FILE_UPLOAD=${{env.NEXT_PUBLIC_ML_FILE_UPLOAD}}
-
+            
       - name: Post build cleanup
         run: docker builder prune -f
 
