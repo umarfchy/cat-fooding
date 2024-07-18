@@ -45,10 +45,3 @@ jobs:
 
       - name: Reset working directory
         run: cd /home/runner/work/
-
-      - name: Checkout dpp-configs repository
-        uses: actions/checkout@v4.1.6
-        with:
-          repository: ${{ github.repository_owner }}/dpp-configs
-          path: dpp-configs
-          token: ${{ secrets.USER_TOKEN }}
