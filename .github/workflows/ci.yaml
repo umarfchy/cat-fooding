@@ -38,7 +38,7 @@ jobs:
 
       - name: Print Tags
         run: |
-          echo "The commit tag is $GITHUB_OUTPUT.COMMIT_TAG_2"
+          echo "The commit tag is $COMMIT_TAG_2"
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v5.3.0
