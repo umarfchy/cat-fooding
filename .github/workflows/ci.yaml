@@ -33,6 +33,13 @@ jobs:
         id: vars
         run: echo "::set-output name=COMMIT_TAG::$(git rev-parse --short HEAD)"
 
+      - name: Set output
+        run: echo "COMMIT_TAG_2=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+
+      - name: Print Tags
+        run: |
+          echo "The commit tag is $GITHUB_OUTPUT.COMMIT_TAG_2"
+
       - name: Build and push Docker image
         uses: docker/build-push-action@v5.3.0
         with:
